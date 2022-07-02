@@ -1,38 +1,45 @@
 import { StatusBar } from "expo-status-bar";
 import react from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
+
+import Dice from "./Dice";
 
 export default class Boxes extends react.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.box}>
-          <View style={styles.inner}>
-            <Text>Advice go here</Text>
-          </View>
-        </View>
+      <View style={styles.box}>
+        <Text style={styles.header}>Advice #117</Text>
+        <Text style={styles.advice}>
+          It is easy to sit up and take notice, what's difficult is getting uu
+          and taking action
+        </Text>
+        <Dice />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: "100%",
-    height: "85%",
-    padding: 5,
-    border: "1px solid red",
-  },
-
   box: {
-    width: "100px",
-    height: "100px",
-  },
-
-  inner: {
-    flex: 1,
-    backgroundColor: "white",
+    width: "340px",
+    height: "310px",
+    backgroundColor: "hsl(217, 19%, 24%)",
+    borderRadius: "10px",
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    color: "white",
+  },
+
+  header: {
+    color: "hsl(150, 100%, 66%)",
+  },
+
+  advice: {
+    color: "whitesmoke",
+    fontSize: "20px",
+    textAlign: "center",
+    width: "90%",
+    height: "125px",
   },
 });
