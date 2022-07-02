@@ -3,6 +3,7 @@ import react from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
 import Dice from "./Dice";
+import PatternDivider from "./PatternDivider";
 
 export default class Boxes extends react.Component {
   render() {
@@ -13,6 +14,7 @@ export default class Boxes extends react.Component {
           It is easy to sit up and take notice, what's difficult is getting uu
           and taking action
         </Text>
+        <PatternDivider />
         <Dice />
       </View>
     );
@@ -33,6 +35,7 @@ const styles = StyleSheet.create({
 
   header: {
     color: "hsl(150, 100%, 66%)",
+    marginBottom: "30px",
   },
 
   advice: {
