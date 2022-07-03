@@ -1,18 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import react from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 
 import { test } from "./Boxes";
 
 export default class Dice extends react.Component {
   render() {
     return (
-      <View style={styles.circle} onPress={test}>
+      <Pressable style={styles.circle} onPress={test}>
         <Image
           source={require("../assets/icon-dice.png")}
           style={styles.dice}
         />
-      </View>
+      </Pressable>
     );
   }
 }
