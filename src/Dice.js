@@ -2,10 +2,12 @@ import { StatusBar } from "expo-status-bar";
 import react from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-export default class Boxes extends react.Component {
+import { test } from "./Boxes";
+
+export default class Dice extends react.Component {
   render() {
     return (
-      <View style={styles.circle}>
+      <View style={styles.circle} onPress={test}>
         <Image
           source={require("../assets/icon-dice.png")}
           style={styles.dice}
@@ -26,6 +28,7 @@ const styles = StyleSheet.create({
     borderRadius: "50px",
     position: "relative",
     bottom: "-60px",
+    cursor: "pointer",
   },
 
   dice: {

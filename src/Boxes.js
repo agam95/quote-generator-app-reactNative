@@ -5,6 +5,10 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import Dice from "./Dice";
 import PatternDivider from "./PatternDivider";
 
+export function test() {
+  console.log("hi");
+}
+
 export default class Boxes extends react.Component {
   render() {
     return (
