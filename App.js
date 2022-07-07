@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import react from "react";
+import react, { useState } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
 import Boxes from "./src/Boxes";

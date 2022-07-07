@@ -1,21 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import react from "react";
+import react, { useState } from "react";
 import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 
-import { test } from "./Boxes";
-
-export default class Dice extends react.Component {
-  render() {
-    return (
-      <Pressable style={styles.circle} onPress={test}>
-        <Image
-          source={require("../assets/icon-dice.png")}
-          style={styles.dice}
-        />
-      </Pressable>
-    );
-  }
-}
+const Dice = ({ button }) => {
+  return (
+    <Pressable style={styles.circle} onPress={button}>
+      <Image source={require("../assets/icon-dice.png")} style={styles.dice} />
+    </Pressable>
+  );
+};
 
 const styles = StyleSheet.create({
   circle: {
@@ -36,3 +29,5 @@ const styles = StyleSheet.create({
     height: "24px",
   },
 });
+
+export default Dice;

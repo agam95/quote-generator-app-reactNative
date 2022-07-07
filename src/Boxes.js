@@ -1,29 +1,35 @@
 import { StatusBar } from "expo-status-bar";
-import react from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import react, { useState, useEffect } from "react";
+import { StyleSheet, Text, View } from "react-native";
 
 import Dice from "./Dice";
 import PatternDivider from "./PatternDivider";
 
-export function test() {
-  console.log("hi");
-}
+const Boxes = () => {
+  const [apiText, setApiText] = useState(
+    "It is easy to sit up and take notice, what's difficult is getting up and taking action"
+  );
+  const [apiAdvice, setApiAdvice] = useState("117");
 
-export default class Boxes extends react.Component {
-  render() {
-    return (
-      <View style={styles.box}>
-        <Text style={styles.header}>Advice #117</Text>
-        <Text style={styles.advice}>
-          It is easy to sit up and take notice, what's difficult is getting uu
-          and taking action
-        </Text>
-        <PatternDivider />
-        <Dice />
-      </View>
-    );
+  function button() {
+    async function getUrl() {
+      const url = "https://api.adviceslip.com/advice";
+      const response = await fetch(url);
+      const data = await response.json();
+      setApiText(data.slip.advice);
+      setApiAdvice(data.slip.id);
+    }
+    getUrl();
   }
-}
+  return (
+    <View style={styles.box}>
+      <Text style={styles.header}>{apiAdvice}</Text>
+      <Text style={styles.advice}>{apiText}</Text>
+      <PatternDivider />
+      <Dice button={button} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   box: {
@@ -50,3 +56,5 @@ const styles = StyleSheet.create({
     height: "125px",
   },
 });
+
+export default Boxes;
